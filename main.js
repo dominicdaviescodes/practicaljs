@@ -14,3 +14,6 @@ todos[0] = 'old item 1';
 console.log('My Todos: ', todos);
 
 // delete todos
+// use splice()  tell where to start (position) and how many to delete
+todos.splice(0, 1);
+console.log('My Todos: ', todos);
