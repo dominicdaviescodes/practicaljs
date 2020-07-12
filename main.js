@@ -4,15 +4,22 @@
 
 // var todos = ['item 1', 'item 2', 'item 3'];  move this into an array on an object
 // no ; in a object
+// var todoList = {
+//   todos: ['item 1', 'item 2', 'item 3']
+// };
+
+// console.log(todoList);
+
+
+// 2. It should have a displayTodos method 
 var todoList = {
-  todos: ['item 1', 'item 2', 'item 3']
+  todos: ['item 1', 'item 2', 'item 3'],
+  displayTodos: function(){
+    console.log(this.todos);
+  }
 };
 
-console.log(todoList);
-
-
-
-
+todoList.displayTodos();
 
 
 
