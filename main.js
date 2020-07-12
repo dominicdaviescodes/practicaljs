@@ -12,14 +12,25 @@
 
 
 // 2. It should have a displayTodos method 
+// 3.  It should have an addTodo method 
+// 4.  It should have a changeTodo method 
 var todoList = {
   todos: ['item 1', 'item 2', 'item 3'],
-  displayTodos: function(){
+  displayTodos: function () {
     console.log(this.todos);
+  },
+  addTodo: function (todo) {
+    this.todos.push(todo);
+    this.displayTodos();
+  },
+  changeTodo: function (position, newValue) {
+    this.todos[position] = newValue;
+    this.displayTodos();
   }
 };
 
-todoList.displayTodos();
+todoList.changeTodo(0, "changed item");
+
 
 
 
