@@ -1,3 +1,33 @@
+// Version 3 - Objects
+
+// 1. It should store the todos array on an object
+
+// var todos = ['item 1', 'item 2', 'item 3'];  move this into an array on an object
+// no ; in a object
+var todoList = {
+  todos: ['item 1', 'item 2', 'item 3']
+};
+
+console.log(todoList);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Version 1 - Arrays
 // store todos
 // var todos = ['item 1', 'item 2', 'item 3'];
