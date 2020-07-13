@@ -8,12 +8,13 @@ var todoList = {
   addTodo: function (todoText) {
     this.todos.push({
       todoText: todoText,
-      completed: false
+      completed: false,
     });
     this.displayTodos();
   },
-  changeTodo: function (position, newValue) {
-    this.todos[position] = newValue;
+  changeTodo: function (position, todoText) {
+    // the 2nd todoText here is the parameter.
+    this.todos[position].todoText = todoText;
     this.displayTodos();
   },
   deleteTodo: function (position) {
@@ -22,7 +23,8 @@ var todoList = {
   },
 };
 
-todoList.deleteTodo(0);
+todoList.addTodo('newer item');
+todoList.changeTodo(0, '2nd try');
 
 // Version 3 - Objects
 
