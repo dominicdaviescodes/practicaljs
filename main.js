@@ -21,10 +21,15 @@ var todoList = {
     this.todos.splice(position, 1);
     this.displayTodos();
   },
+  toggleCompleted: function (position) {
+    var todo = this.todos[position];
+    todo.completed = !todo.completed;
+    this.displayTodos();
+  },
 };
 
-todoList.addTodo('newer item');
-todoList.changeTodo(0, '2nd try');
+todoList.addTodo('latest item');
+todoList.toggleCompleted(0);
 
 // Version 3 - Objects
 
