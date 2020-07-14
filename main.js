@@ -1,9 +1,24 @@
-// Version 4 - Booleans
+// V5 loops
 
 var todoList = {
   todos: [],
   displayTodos: function () {
-    console.log('My Todos', this.todos);
+    if (this.todos.length === 0) {
+      console.log('Your todo list is empty!');
+    } else {
+      console.log('My Todos:');
+      for (var i = 0; i < this.todos.length; i++) {
+        // console.log(this.todos[i].todoText);
+        // check if .completed is true
+        if (this.todos[i].completed === true) {
+          // print with (x)
+          console.log('(x)', this.todos[i].todoText);
+        } else {
+          // print with ( )
+          console.log('( )', this.todos[i].todoText);
+        }
+      }
+    }
   },
   addTodo: function (todoText) {
     this.todos.push({
@@ -26,10 +41,71 @@ var todoList = {
     todo.completed = !todo.completed;
     this.displayTodos();
   },
+  toggleAll: function () {
+    var totalTodos = this.todos.length;
+    var completedTodos = 0;
+
+    // get no. of completedTodos
+    for (var i = 0; i < totalTodos; i++) {
+      if (this.todos[i].completed === true) {
+        completedTodos++;
+      }
+    }
+
+    // 1st case, all true, turn false
+    if (completedTodos === totalTodos) {
+      // make all false
+      for (var i = 0; i < totalTodos; i++) {
+        // change to false
+        this.todos[i].completed = false;
+      }
+      // 2nd case: otherwise make everything true
+    } else {
+      for (var i = 0; i < totalTodos; i++) {
+        this.todos[i].completed = true;
+      }
+    }
+    this.displayTodos();
+  },
 };
 
 todoList.addTodo('latest item');
-todoList.toggleCompleted(0);
+todoList.addTodo('item 2');
+todoList.addTodo('item 3');
+// todoList.displayTodos();
+
+// Version 4 - Booleans
+
+// var todoList = {
+//   todos: [],
+//   displayTodos: function () {
+//     console.log('My Todos', this.todos);
+//   },
+//   addTodo: function (todoText) {
+//     this.todos.push({
+//       todoText: todoText,
+//       completed: false,
+//     });
+//     this.displayTodos();
+//   },
+//   changeTodo: function (position, todoText) {
+//     // the 2nd todoText here is the parameter.
+//     this.todos[position].todoText = todoText;
+//     this.displayTodos();
+//   },
+//   deleteTodo: function (position) {
+//     this.todos.splice(position, 1);
+//     this.displayTodos();
+//   },
+//   toggleCompleted: function (position) {
+//     var todo = this.todos[position];
+//     todo.completed = !todo.completed;
+//     this.displayTodos();
+//   },
+// };
+
+// todoList.addTodo('latest item');
+// todoList.toggleCompleted(0);
 
 // Version 3 - Objects
 
