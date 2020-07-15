@@ -1,4 +1,4 @@
-// V5 loops
+// V5 loops, V6, V7
 
 var todoList = {
   todos: [],
@@ -68,10 +68,16 @@ var todoList = {
     this.displayTodos();
   },
 };
+// grab display todos button
+var displayTodosButton = document.getElementById('displayTodosButton');
+// run displayTodos method, when btn clicked
+displayTodosButton.addEventListener('click', function () {
+  todoList.displayTodos();
+});
 
-todoList.addTodo('latest item');
-todoList.addTodo('item 2');
-todoList.addTodo('item 3');
+// todoList.addTodo('latest item');
+// todoList.addTodo('item 2');
+// todoList.addTodo('item 3');
 // todoList.displayTodos();
 
 // Version 4 - Booleans
