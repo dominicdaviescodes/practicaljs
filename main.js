@@ -76,6 +76,11 @@ var handlers = {
   toggleAll: function () {
     todoList.toggleAll();
   },
+  addTodo: function () {
+    var addTodoTextInput = document.getElementById('addTodoTextInput');
+    todoList.addTodo(addTodoTextInput.value);
+    addTodoTextInput.value = "";
+  }
 };
 // todoList.addTodo('latest item');
 // todoList.addTodo('item 2');
