@@ -68,22 +68,18 @@ var todoList = {
     this.displayTodos();
   },
 };
-// grab display todos button
-var displayTodosButton = document.getElementById('displayTodosButton');
-// grab display todos button
-var toggleAllButton = document.getElementById('toggleAllButton');
-// run displayTodos method, when btn clicked
-displayTodosButton.addEventListener('click', function () {
-  todoList.displayTodos();
-});
 
-toggleAllButton.addEventListener('click', function () {
-  todoList.toggleAll();
-});
-
-todoList.addTodo('latest item');
-todoList.addTodo('item 2');
-todoList.addTodo('item 3');
+var handlers = {
+  displayTodos: function () {
+    todoList.displayTodos();
+  },
+  toggleAll: function () {
+    todoList.toggleAll();
+  },
+};
+// todoList.addTodo('latest item');
+// todoList.addTodo('item 2');
+// todoList.addTodo('item 3');
 // todoList.displayTodos();
 
 // Version 4 - Booleans
