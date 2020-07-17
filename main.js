@@ -1,5 +1,3 @@
-// V5 loops, V6, V7
-
 var todoList = {
   todos: [],
   displayTodos: function () {
@@ -8,13 +6,9 @@ var todoList = {
     } else {
       console.log('My Todos:');
       for (var i = 0; i < this.todos.length; i++) {
-        // console.log(this.todos[i].todoText);
-        // check if .completed is true
         if (this.todos[i].completed === true) {
-          // print with (x)
           console.log('(x)', this.todos[i].todoText);
         } else {
-          // print with ( )
           console.log('( )', this.todos[i].todoText);
         }
       }
@@ -28,7 +22,6 @@ var todoList = {
     this.displayTodos();
   },
   changeTodo: function (position, todoText) {
-    // the 2nd todoText here is the parameter.
     this.todos[position].todoText = todoText;
     this.displayTodos();
   },
@@ -73,9 +66,6 @@ var handlers = {
   displayTodos: function () {
     todoList.displayTodos();
   },
-  toggleAll: function () {
-    todoList.toggleAll();
-  },
   addTodo: function () {
     var addTodoTextInput = document.getElementById('addTodoTextInput');
     todoList.addTodo(addTodoTextInput.value);
@@ -92,8 +82,33 @@ var handlers = {
     var deleteTodoPositionInput = document.getElementById('deleteTodoPositionInput');
     todoList.deleteTodo(deleteTodoPositionInput.valueAsNumber);
     deleteTodoPositionInput.value = "";
+  },
+  toggleCompleted: function () {
+    var toggleCompletedPositionInput = document.getElementById('toggleCompletedPositionInput');
+    todoList.deleteTodo(toggleCompletedPositionInput.valueAsNumber);
+    toggleCompletedPositionInput.value = "";
+  },
+  toggleAll: function () {
+    todoList.toggleAll();
   }
 };
+
+// new object for user view
+// 
+var view = {
+  displayTodos: function () {
+    var todosUl = document.querySelector('ul');
+    todosUl.innerHTML = "";
+
+    for (var i = 0; i < todoList.todos.length; i++) {
+      var todoLi = document.createElement('li');
+      todosUl.appendChild(todoLi);
+    }
+  }
+}
+
+
+
 // todoList.addTodo('latest item');
 // todoList.addTodo('item 2');
 // todoList.addTodo('item 3');
